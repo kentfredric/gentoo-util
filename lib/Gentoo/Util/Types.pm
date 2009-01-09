@@ -43,13 +43,4 @@ subtype 'Gentoo::Repository::Type::CategoryAtom' => (
 	},
 );
 
-subtype 'Gentoo::Repository::Type::Repository' => ( as 'Gentoo::Repository', );
-coerce 'Gentoo::Repository'        => (
-	from 'Str',
-	via {
-		require Gentoo::Repository;
-		Gentoo::Repository->new( directory => $_ );
-	},
-);
-
 1;
