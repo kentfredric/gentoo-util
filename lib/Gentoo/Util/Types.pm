@@ -1,11 +1,11 @@
-package Gentoo::Repository::Types;
+package Gentoo::Util::Types;
 
 #$Id:$
 use Moose;
 use version; our $VERSION = qv('0.1');
 use Moose::Util::TypeConstraints;
 
-subtype 'Gentoo::Repository::Type::Directory' => (
+subtype 'Gentoo::Util::Type::Directory' => (
 	as 'Str',
 	where {
 		return if not -e -r -d $_;
@@ -21,7 +21,7 @@ subtype 'Gentoo::Repository::Type::Directory' => (
 	},
 );
 
-subtype 'Gentoo::Repository::Type::PackageAtom' => (
+subtype 'Gentoo::Util::Type::PackageAtom' => (
 	as 'Str',
 	where {
 		## no critic ( DotMatchAnything ExtendedFormatting LineBoundaryMatching )
@@ -32,7 +32,7 @@ subtype 'Gentoo::Repository::Type::PackageAtom' => (
 	},
 );
 
-subtype 'Gentoo::Repository::Type::CategoryAtom' => (
+subtype 'Gentoo::Util::Type::CategoryAtom' => (
 	as 'Str',
 	where {
 		## no critic ( DotMatchAnything ExtendedFormatting LineBoundaryMatching )
